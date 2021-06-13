@@ -1,0 +1,53 @@
+<div class="content-wrapper">
+    <div class="container">
+        <div class="row pad-botm">
+            <div class="col-md-12">
+                <h4 class="header-line">Trang chủ/ dự án</h4>           
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Projects
+                    </div>
+                    <div class="panel-body">
+                        <button class="btn btn-info" style="position: absolute;"><a href="products/createproject">Create Project</a></button>
+                        <div class="md-form mt-0">
+                            <input class="form-control mr-sm-2" type="text" placeholder="Search" style=" width: 200px;float: right;" [(ngModel)]='timkiemValue' (input)='filterAct()'>
+                        </div><br><br>
+                        <div class="table-responsive">
+                            <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                <thead>
+                                    <tr>
+                                        <th>ProjectID</th>
+                                        <th>Project Name</th>
+                                        <th>Project Prices</th>
+                                        <th>Date of Start</th>
+                                        <th>Team Size</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="odd gradeX" *ngFor="let project of projectss | paginate:{id:'listing_pagination',itemsPerPage: 5,currentPage: page, totalItems: totalRecords }">
+                                        <td>{{project.id}}</td>
+                                        <td>{{project.ProjectName}}</td>
+                                        <td>{{project.Prices | currency }}</td>
+                                        <td>{{project.DateofStart}}</td>
+                                        <td class="center">{{project.TeamSize}}</td>
+                                        <td class="center" style="width: 122px;">
+                                            <button class="btn btn-info" (click)="editProject(project.id)">Edit</button>
+                                            <button class="btn btn-info" (click)="xoaProject(project.id)">Delete</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <pagination-controls id="listing_pagination" (pageChange)="page=$event"></pagination-controls>
+                        </div>     
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

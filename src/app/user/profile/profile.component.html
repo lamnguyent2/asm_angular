@@ -1,0 +1,96 @@
+<div class="content-wrapper">
+    <div class="container">
+        <div class="row pad-botm">
+            <div class="col-md-12">
+                <h4 class="header-line">Trang chủ/ profile</h4>
+            </div>
+        </div>
+        <div class="main-body"> 
+            <div class="row gutters-sm" *ngFor="let ggs of userzzzzzzzzzz">
+                <div class="col-md-4 mb-3">
+                    <div class="card" *ngIf="ggs.Images==''">
+                        <div class="card-body">
+                            <div class="d-flex flex-column align-items-center text-center">
+                                <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
+                                <div class="mt-3">
+                                <h4></h4>
+                                <p class="text-secondary mb-1">Full Stack Developer</p>
+                                <p class="text-muted font-size-sm">Bay Area, San Francisco, CA</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" *ngIf="ggs.Images.length>0">
+                        <div class="card-body">
+                            <div class="d-flex flex-column align-items-center text-center">
+                                <img src="assets/img/{{ggs.Images}}" alt="Admin" class="rounded-circle" width="150">
+                                <div class="mt-3">
+                                <h4></h4>
+                                <p class="text-secondary mb-1">Full Stack Developer</p>
+                                <p class="text-muted font-size-sm">Bay Area, San Francisco, CA</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="card mb-3" >
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                <h6 class="mb-0">Full Name</h6>
+                                </div>
+                                <div class="col-sm-9 text-secondary">
+                                {{ggs.Fullname}}
+                                </div>
+                            </div>
+                            <hr>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                    <h6 class="mb-0">Email</h6>
+                                    </div>
+                                    <div class="col-sm-9 text-secondary">
+                                    {{ggs.Email}}
+                                    </div>
+                                </div>
+                            <hr>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                    <h6 class="mb-0">Username</h6>
+                                    </div>
+                                    <div class="col-sm-9 text-secondary">
+                                    {{ggs.Username}}
+                                    </div>
+                                </div>
+                            <hr>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                    <h6 class="mb-0">Roles</h6>
+                                    </div>
+                                    <div class="col-sm-9 text-secondary">
+                                    {{ggs.Roles}}
+                                    </div>
+                                </div>
+                            <hr>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                    <h6 class="mb-0">Team name</h6>
+                                    </div>
+                                    <div class="col-sm-9 text-secondary">
+                                    {{ggs.TeamName}}
+                                    </div>
+                                </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <button class="btn btn-info" (click)="editUser(ggs.id)">Edit</button> &nbsp;
+                                    <button class="btn btn-info" (click)="resetpass(ggs.id)">Đổi mật khẩu</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

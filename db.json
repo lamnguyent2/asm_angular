@@ -1,0 +1,257 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "ProjectName": "Project 1",
+      "Prices": 230000,
+      "DateofStart": "2001-02-20",
+      "TeamSize": 4
+    },
+    {
+      "ProjectName": "Project 2",
+      "Prices": 375000,
+      "DateofStart": "2002-02-20",
+      "TeamSize": 5,
+      "id": 2
+    },
+    {
+      "ProjectName": "Project 3",
+      "Prices": 180000,
+      "DateofStart": "2003-02-20",
+      "TeamSize": 6,
+      "id": 3
+    },
+    {
+      "ProjectName": "Project 4",
+      "Prices": 292000,
+      "DateofStart": "2004-02-20",
+      "TeamSize": 7,
+      "id": 4
+    },
+    {
+      "ProjectName": "Project 5",
+      "Prices": 684000,
+      "DateofStart": "2021-06-11",
+      "TeamSize": 3,
+      "id": 5
+    },
+    {
+      "ProjectName": "Project 6",
+      "Prices": 730000,
+      "DateofStart": "2021-06-25",
+      "TeamSize": 7,
+      "id": 6
+    },
+    {
+      "ProjectName": "Project 7",
+      "Prices": 200000,
+      "DateofStart": "2021-06-03",
+      "TeamSize": 3,
+      "id": 7
+    },
+    {
+      "ProjectName": "Project 8",
+      "Prices": 540000,
+      "DateofStart": "2021-07-02",
+      "TeamSize": 3,
+      "id": 8
+    },
+    {
+      "ProjectName": "Project 9",
+      "Prices": 960000,
+      "DateofStart": "2021-01-28",
+      "TeamSize": 5,
+      "id": 9
+    },
+    {
+      "ProjectName": "Project 10",
+      "Prices": 750000,
+      "DateofStart": "2021-03-31",
+      "TeamSize": 6,
+      "id": 10
+    },
+    {
+      "ProjectName": "Project 11",
+      "Prices": 675000,
+      "DateofStart": "2021-05-24",
+      "TeamSize": 4,
+      "id": 11
+    },
+    {
+      "ProjectName": "Project 12",
+      "Prices": 648000,
+      "DateofStart": "2021-06-19",
+      "TeamSize": 4,
+      "id": 12
+    }
+  ],
+  "tasks": [
+    {
+      "TaskName": "Task 1",
+      "Desscription": "gg 2",
+      "Project": "Project 1",
+      "PricesProject": 230000,
+      "Assigned_To": "design layout",
+      "Priority": "Nomal",
+      "Status": "Holding",
+      "id": 1
+    },
+    {
+      "id": 2,
+      "TaskName": "Task 2",
+      "Desscription": "gg",
+      "Project": "Project 2",
+      "PricesProject": 375000,
+      "Assigned_To": "data management",
+      "Priority": "Hard",
+      "Status": "Holding"
+    },
+    {
+      "TaskName": "Task 3",
+      "Desscription": "gg2",
+      "Project": "Project 3",
+      "PricesProject": 180000,
+      "Assigned_To": "project management",
+      "Priority": "Hard",
+      "Status": "Holding",
+      "id": 3
+    },
+    {
+      "TaskName": "Task 4",
+      "Desscription": "gg 4",
+      "Project": "Project 4",
+      "PricesProject": 292000,
+      "Assigned_To": "project management",
+      "Priority": "Easy",
+      "Status": "Holding",
+      "id": 4
+    },
+    {
+      "TaskName": "Task 5",
+      "Desscription": "gg 4",
+      "Project": "Project 5",
+      "PricesProject": 684000,
+      "Assigned_To": "project management",
+      "Priority": "Easy",
+      "Status": "Holding",
+      "id": 5
+    },
+    {
+      "TaskName": "Task 6",
+      "Desscription": "dwdwd",
+      "Project": "Project 6",
+      "Assigned_To": "data management",
+      "Priority": "Hard",
+      "Status": "Holding",
+      "id": 6
+    }
+  ],
+  "teams": [
+    {
+      "id": 1,
+      "TeamName": "East"
+    },
+    {
+      "id": 2,
+      "TeamName": "West"
+    },
+    {
+      "id": 3,
+      "TeamName": "South"
+    },
+    {
+      "id": 4,
+      "TeamName": "North"
+    }
+  ],
+  "users": [
+    {
+      "Fullname": "Lam Nguyễn",
+      "Username": "lamnguyenxyzt3",
+      "Password": "123258789",
+      "Roles": "Leader",
+      "Email": "lamnguyenxyzt3@gmail.com",
+      "TeamName": "West",
+      "Images": "trai2.jpg",
+      "TrangThai": "Active",
+      "id": 1
+    },
+    {
+      "Fullname": "Thanh Lam",
+      "Username": "lamnguyenxyzt1",
+      "Password": "Lam0123456",
+      "Roles": "Employee",
+      "Email": "lamnguyenxyzt1@gmail.com",
+      "TeamName": "West",
+      "Images": "trai1.jpg",
+      "TrangThai": "Active",
+      "id": 2
+    },
+    {
+      "Fullname": "Văn Lâm",
+      "Username": "lamnguyenxyzt2",
+      "Password": "123123456",
+      "Roles": "Employee",
+      "Email": "lamnguyenxyzt2@gmail.com",
+      "TeamName": "East",
+      "Images": "trai1.jpg",
+      "TrangThai": "Active",
+      "id": 3
+    },
+    {
+      "Fullname": "Đặng Hoàng",
+      "Username": "lamnguyenxyzt4",
+      "Password": "11223344",
+      "Roles": "Employee",
+      "Email": "lamnguyenxyzt4@gmail.com",
+      "TeamName": "East",
+      "Images": "trai1.jpg",
+      "TrangThai": "Active",
+      "id": 4
+    },
+    {
+      "Fullname": "Quốc Huy",
+      "Username": "lamnguyenxyzt5",
+      "Password": "123258789",
+      "Roles": "Employee",
+      "Email": "lamnguyenxyzt5@gmail.com",
+      "TeamName": "South",
+      "Images": "trai1.jpg",
+      "TrangThai": "Active",
+      "id": 5
+    },
+    {
+      "Fullname": "Quốc Lập",
+      "Username": "lamnguyenxyzt6",
+      "Password": "147456963",
+      "Roles": "Employee",
+      "Email": "lamnguyenxyzt6@gmail.com",
+      "TeamName": "South",
+      "Images": "trai1.jpg",
+      "TrangThai": "Active",
+      "id": 6
+    },
+    {
+      "Fullname": "Bá Đạo",
+      "Username": "lamnguyenxyzt7",
+      "Password": "12341234",
+      "Roles": "Employee",
+      "Email": "lamnguyenxyzt7@gmail.com",
+      "TeamName": "North",
+      "Images": "trai1.jpg",
+      "TrangThai": "Active",
+      "id": 7
+    },
+    {
+      "Fullname": "Hải Dương",
+      "Username": "lamnguyenxyzt8",
+      "Password": "123456789123",
+      "Roles": "Employee",
+      "Email": "lamnguyenxyzt8@gmail.com",
+      "TeamName": "North",
+      "Images": "trai1.jpg",
+      "TrangThai": "Active",
+      "id": 8
+    }
+  ]
+}

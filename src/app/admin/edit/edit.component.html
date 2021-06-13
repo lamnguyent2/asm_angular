@@ -1,0 +1,38 @@
+<div class="navbar navbar-inverse set-radius-zero" >
+    <div class="container">
+        <div class="col-md-8 col-sm-8 col-xs-12">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    Edit Project
+                </div>
+                <div class="panel-body">
+                    <form role="form" [formGroup]="productForm" (ngSubmit)="onSubmit()">
+                        <div class="form-group">
+                            <label>Enter Project Name</label>
+                            <input class="form-control" type="text" name="ProjectName" formControlName="ProjectName" />
+                            <span *ngIf="!productForm.get('ProjectName')?.valid && (productForm.get('ProjectName')?.dirty||productForm.get('ProjectName')?.touched)" class="help-block">Bạn chưa nhập Project Name</span>
+                        </div>
+                        <div class="form-group">
+                            <label>Enter Project Prices</label>
+                            <input class="form-control" type="number" formControlName="Prices" name="Prices" />
+                            <span *ngIf="!productForm.get('Prices')?.valid && (productForm.get('Prices')?.dirty||productForm.get('Prices')?.touched)" class="help-block">Bạn chưa nhập Prices</span>
+                        </div>
+                        <div class="form-group">
+                            <label>Enter Date of Start</label>
+                            <input class="form-control" type="date" formControlName="DateofStart" name="DateofStart"/>
+                            <span *ngIf="!productForm.get('DateofStart')?.valid && (productForm.get('DateofStart')?.dirty||productForm.get('DateofStart')?.touched)" class="help-block">Bạn chưa nhập Date of Start</span>
+                        </div>
+                        <div class="form-group">
+                            <label>Enter Team Size</label>
+                            <input class="form-control" type="number" formControlName="TeamSize" name="TeamSize" />
+                            <span *ngIf="!productForm.get('TeamSize')?.valid && (productForm.get('TeamSize')?.dirty||productForm.get('TeamSize')?.touched)" class="help-block">Bạn chưa nhập TeamSize</span>
+                        </div>
+                        <a class="btn btn-danger" (click)='onBack()' style='width:70px'> Cancel </a> &nbsp;&nbsp;&nbsp;
+                        <button type="submit" class="btn btn-info" [disabled]="productForm.invalid" >Edit </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

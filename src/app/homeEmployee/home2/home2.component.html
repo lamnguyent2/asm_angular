@@ -1,0 +1,53 @@
+<!-- MENU SECTION END-->
+<div class="content-wrapper">
+    <div class="container">
+        <div class="row pad-botm">
+            <div class="col-md-12">
+            <h4 class="header-line">Trang chủ/ employee</h4>        
+        </div>
+        </div>
+           <div class="row">
+            <div class="row" >
+                <div class="col-md-6 col-sm-6" *ngFor="let teamss of teamzz">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            {{teamss.TeamName}}
+                        </div>
+                        <div class="panel-body">
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a href="#home" data-toggle="tab">Lịch</a>
+                                </li>
+                                <li class=""><a href="#profile" data-toggle="tab">Dự án</a>
+                                </li>
+                                <li class=""><a href="#messages" data-toggle="tab">Thông báo</a>
+                                </li>
+                                <li class=""><a href="#settings" data-toggle="tab">Tin tức</a>
+                                </li>
+                            </ul>
+
+                            <div class="tab-content">
+                                <div class="tab-pane fade active in" id="home">
+                                    <h4>Lịch</h4>
+                                    <p> Thứ 2 -> Chủ nhật nghỉ.</p>
+                                    
+                                </div>
+                                <div class="tab-pane fade" id="profile">
+                                    <h4>Dự án</h4>
+                                    <p>Cycleshop: http://gg.lamnvt.name.vn/View/index.php</p>
+                                </div>
+                                <div class="tab-pane fade" id="messages">
+                                    <h4>Thông báo</h4>
+                                    <p>Không có thông báo.</p>
+                                </div>
+                                <div class="tab-pane fade" id="settings">
+                                    <h4>Tin tức</h4>
+                                    <p>Không có tin tức nào.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+</div>

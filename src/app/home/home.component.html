@@ -1,0 +1,278 @@
+<!-- MENU SECTION END-->
+<div class="content-wrapper" *ngFor="let userzzzz of userzz">
+    <div class="container" *ngIf="userzzzz.Roles=='Leader'">
+        <div class="row pad-botm">
+            <div class="col-md-12">
+                <h4 class="header-line">Trang chủ/ Bảng điều khiển</h4>
+            </div>
+        </div>
+        <div class="row" >
+            <div class="col-md-3 col-sm-3 col-xs-6">
+                <div class="alert alert-info back-widget-set text-center">
+                    <i class="fa fa-history fa-5x"></i>
+                    <h3>{{projectss2}}k+&nbsp; <i class="fa fa-dollar"></i></h3>
+                        Tổng Chi Phí Của Tất Cả Dự Án
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-6">
+                <div class="alert alert-success back-widget-set text-center">
+                    <i class="fa fa-bars fa-5x"></i>
+                    <h3>{{taskzz}}+ Tasks</h3>
+                        Các Task Đang Xử Lý
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-6">
+                <div class="alert alert-warning back-widget-set text-center">
+                    <i class="fa fa-recycle fa-5x"></i>
+                    <h3>{{userzzzzzzzz}}+ Members</h3>
+                        Số Lượng Thành Viên
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-6">
+                <div class="alert alert-danger back-widget-set text-center">
+                    <i class="fa fa-briefcase fa-5x"></i>
+                    <h3>{{projectzz}}+ Project </h3>
+                        Dự Án Sắp Triển Khai
+                </div>
+            </div>
+        </div>              
+        <div class="row"></div>
+        <div class="row">
+            <div class="col-md-4 col-sm-4 col-xs-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Tóm tắt về Team
+                    </div>
+                    <div class="panel-body text-center recent-users-sec">
+                        SỐ LƯỢNG THÀNH VIÊN &emsp;&emsp;&emsp;&emsp;<span class="badge">{{userzzzzzzzz}}</span>   <br>
+                        TỔNG PHÍ ALL DỰ ÁN &emsp;&emsp;&emsp;&emsp;<span class="badge">${{projectss2}}k</span><br>
+                        CÁC TASK ĐANG XỬ LÝ &emsp;&emsp;&emsp;&emsp;&emsp;<span class="badge">{{taskzz}}</span><br>
+                        DỰ ÁN SẮP TRIỂN KHAI &emsp;&emsp;&emsp;&emsp;<span class="badge">20%</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8 col-sm-8 col-xs-12">
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        TỔNG THỂ DỰ ÁN
+                    </div>
+                    <div class="panel-body">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-bordered table-hover">
+                                <tbody>
+                                    <tr>
+                                        <td>Chi phí dự án</td>
+                                        <td>${{projectss1}}.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Hiện tại đã chi</td>
+                                        <td>${{projectss3}}.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Còn lại</td>
+                                        <td>${{projectss4}}.00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>   
+        </div>
+        <div class="row">     
+            <div class="col-md-4 col-sm-4 col-xs-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        KHÁCH HÀNG
+                    </div>
+                    <div class="panel-body recent-users-sec" style="margin-left: 40px;">
+                        ABC Cake Ltd.<br>
+                        DEF Software Solutio<br>
+                        GHI Industries<br>
+                    </div>
+                </div>
+            </div><br>
+            <div class="col-md-8 col-sm-8 col-xs-12">
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        THÀNH VIÊN CỦA NHÓM
+                    </div>
+                    <div class="panel-body">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-bordered table-hover">
+                                <thead>
+                                    <tr >
+                                        <th>#</th>
+                                        <th>Khu Vực</th>
+                                        <th>Số Lượng Nhân Viên</th>
+                                        <th>Nhân Viên Đang Tạm Nghỉ</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="success">
+                                        <td>1</td>
+                                        <td>East</td>
+                                        <td>{{eastz}}</td>
+                                        <td>0</td>
+                                    </tr>
+                                    <tr class="info">
+                                        <td>2</td>
+                                        <td>West</td>
+                                        <td>{{westz}}</td>
+                                        <td>0</td>
+                                    </tr>
+                                    <tr class="warning">
+                                        <td>3</td>
+                                        <td>South</td>
+                                        <td>{{southz}}</td>
+                                        <td>0</td>
+                                    </tr>
+                                    <tr class="danger">
+                                        <td>4</td>
+                                        <td>North</td>
+                                        <td>{{northz}}</td>
+                                        <td>0</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        THÀNH VIÊN CỦA TEAM
+                    </div>
+                    <div class="panel-body">
+                        <div class="alert alert-success">
+                            East
+                        </div>
+                        <div style="max-width: 90%;margin-left: 30px;" *ngFor="let eastss of easts | paginate:{id:'listing_pagination',itemsPerPage: 2,currentPage: page, totalItems: totalRecords }">
+                            <div class="alert alert-info">
+                                #{{eastss.id}} {{eastss.Fullname}}
+                                <button class="btn btn-info" (click)="xoaUsers(eastss.id)"  style="float: right; margin-top: -7px;" *ngIf="eastss.Roles=='Employee'">Xóa</button>
+                            </div>
+                            <p style="margin-left:10px;">{{eastss.TrangThai}}</p> 
+                        </div>                    
+                    </div>
+                    <pagination-controls id="listing_pagination" (pageChange)="page=$event"></pagination-controls>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        THÀNH VIÊN CỦA TEAM
+                    </div>
+                    <div class="panel-body">
+                        <div class="alert alert-success">
+                            West
+                        </div>
+                        <div style="max-width: 90%;margin-left: 30px;" *ngFor="let westss of wests | paginate:{id:'listing_pagination1',itemsPerPage: 2,currentPage: page1, totalItems: totalRecords1 }">
+                            <div class="alert alert-info">
+                                #{{westss.id}} {{westss.Fullname}}
+                                <button class="btn btn-info" (click)="xoaUsers(westss.id)"  style="float: right; margin-top: -7px;" *ngIf="westss.Roles=='Employee'">Xóa</button>
+                            </div>
+                            <p style="margin-left:10px;">{{westss.TrangThai}}</p> 
+                        </div>
+                    </div>
+                    <pagination-controls id="listing_pagination1" (pageChange)="page1=$event"></pagination-controls>
+                </div>
+            </div> 
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        THÀNH VIÊN CỦA TEAM
+                    </div>
+                    <div class="panel-body">
+                        <div class="alert alert-success">
+                            South	
+                        </div>
+                        <div style="max-width: 90%;margin-left: 30px;" *ngFor="let southss of souths | paginate:{id:'listing_pagination2',itemsPerPage: 2,currentPage: page2, totalItems: totalRecords2 }">
+                            <div class="alert alert-info">
+                                #{{southss.id}} {{southss.Fullname}}
+                                <button class="btn btn-info" (click)="xoaUsers(southss.id)"  style="float: right; margin-top: -7px;" *ngIf="southss.Roles=='Employee'">Xóa</button>
+                            </div>
+                            <p style="margin-left:10px;">{{southss.TrangThai}}</p> 
+                        </div>
+                    </div>
+                    <pagination-controls id="listing_pagination2" (pageChange)="page2=$event"></pagination-controls>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        THÀNH VIÊN CỦA TEAM
+                    </div>
+                    <div class="panel-body">
+                        <div class="alert alert-success">
+                            North	
+                        </div>
+                        <div style="max-width: 90%;margin-left: 30px;" *ngFor="let northss of norths | paginate:{id:'listing_pagination3',itemsPerPage: 2,currentPage: page3, totalItems: totalRecords3 }">
+                            <div class="alert alert-info">
+                                #{{northss.id}} {{northss.Fullname}}
+                                <button class="btn btn-info" (click)="xoaUsers(northss.id)"  style="float: right; margin-top: -7px;" *ngIf="northss.Roles=='Employee'">Xóa</button>
+                            </div>
+                            <p style="margin-left:10px;">{{northss.TrangThai}}</p> 
+                        </div>
+                    </div>
+                    <pagination-controls id="listing_pagination3" (pageChange)="page3=$event"></pagination-controls>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" *ngIf="userzzzz.Roles=='Employee'">
+        <div class="row pad-botm">
+            <div class="col-md-12">
+            <h4 class="header-line">Trang chủ/ employee</h4>        
+        </div>
+        </div>
+           <div class="row">
+            <div class="row" >
+                <div class="col-md-6 col-sm-6" *ngFor="let teamss of teamzz">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            {{teamss.TeamName}}
+                        </div>
+                        <div class="panel-body">
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a href="#home" data-toggle="tab">Lịch</a>
+                                </li>
+                                <li class=""><a href="#profile" data-toggle="tab">Dự án</a>
+                                </li>
+                                <li class=""><a href="#messages" data-toggle="tab">Thông báo</a>
+                                </li>
+                                <li class=""><a href="#settings" data-toggle="tab">Tin tức</a>
+                                </li>
+                            </ul>
+
+                            <div class="tab-content">
+                                <div class="tab-pane fade active in" id="home">
+                                    <h4>Lịch</h4>
+                                    <p> Thứ 2 -> Chủ nhật nghỉ.</p>
+                                    
+                                </div>
+                                <div class="tab-pane fade" id="profile">
+                                    <h4>Dự án</h4>
+                                    <p>Cycleshop: http://gg.lamnvt.name.vn/View/index.php</p>
+                                </div>
+                                <div class="tab-pane fade" id="messages">
+                                    <h4>Thông báo</h4>
+                                    <p>Không có thông báo.</p>
+                                </div>
+                                <div class="tab-pane fade" id="settings">
+                                    <h4>Tin tức</h4>
+                                    <p>Không có tin tức nào.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

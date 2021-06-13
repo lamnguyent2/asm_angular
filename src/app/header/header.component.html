@@ -1,0 +1,42 @@
+<section class="menu-section">
+    <div class="container">
+        <div class="row ">
+            <div class="col-md-12">
+                <div class="navbar-collapse collapse" *ngIf="!data">
+                    <ul id="menu-top" class="nav navbar-nav navbar-left">
+                        <li><a href="login" class="menu-top-active" style="margin-left: -60px;">Quản Lý Dự Án Fpoly</a></li>
+                        <li><a href="login" class="menu-top-active" style="width: 115px;position: absolute;margin-left: 130px;margin-top: -70px;">Đăng nhập</a></li>
+                        <li><a href="register" class="menu-top-active" style="width: 95px;position: absolute;margin-left: 246px;margin-top: -70px;">Đăng ký</a></li>
+                    </ul>
+                    <ul id="menu-top" class="nav navbar-nav navbar-right" >
+                    </ul>
+                </div>
+                <div class="navbar-collapse collapse " *ngIf="data">
+                    <div  *ngFor="let userzzzz of userzz">
+                        <ul id="menu-top" class="nav navbar-nav navbar-left" *ngIf="userzzzz.Roles=='Leader'">
+                            <li><a href="home" class="menu-top-active" style="margin-left: -60px;">Quản Lý Dự Án Fpoly {{datasroles}}</a></li>
+                            <li><a href="profile/{{userzzzz.id}}" class="menu-top-active" style="width: 200px;position: absolute;margin-left: 130px;margin-top: -70px;" *ngFor="let userzzzz of userzz" (click)="profile(userzzzz.id)">{{userzzzz.Fullname}}</a></li>
+                            <li><a href="login" class="menu-top-active" style="width: 112px;position: absolute;margin-left: 600px;margin-top: -70px;" (click)="logout()">Đăng xuất</a></li>
+                        </ul>
+                        <ul id="menu-top" class="nav navbar-nav navbar-left" *ngIf="userzzzz.Roles=='Employee'">
+                            <li><a href="home" class="menu-top-active" style="margin-left: -60px;">Quản Lý Dự Án Fpoly {{datasroles}}</a></li>
+                            <li><a href="profile/{{userzzzz.id}}" class="menu-top-active" style="width: 200px;position: absolute;margin-left: 130px;margin-top: -70px;" *ngFor="let userzzzz of userzz" (click)="profile(userzzzz.id)">{{userzzzz.Fullname}}</a></li>
+                            <li><a href="login" class="menu-top-active" style="width: 112px;position: absolute;margin-left: 700px;margin-top: -70px;" (click)="logout()">Đăng xuất</a></li>
+                        </ul>
+                        <ul id="menu-top" class="nav navbar-nav navbar-right" *ngIf="userzzzz.Roles=='Leader'">
+                            <li style="position: absolute; margin-left: -350px;"><a href="bang-dieu-khien">Bảng điều khiển</a></li>
+                            <li style="position: absolute; margin-left: -195px;"><a href="gioi-thieu">Giới thiệu</a></li>
+                            <li style="position: absolute; margin-left: -87px;"><a href="products">Dự án</a></li>
+                            <li style="position: absolute; margin-left: -10px;"><a href="products-task">Task</a></li>
+                        </ul>
+                        <ul id="menu-top" class="nav navbar-nav navbar-right" *ngIf="userzzzz.Roles=='Employee'">
+                            <li style="position: absolute; margin-left: -280px;"><a href="bang-dieu-khien">Bảng điều khiển</a></li>
+                            <li style="position: absolute; margin-left: -120px;"><a href="gioi-thieu">Giới thiệu</a></li>
+                            <li style="position: absolute; margin-left: -10px;"><a href="products-task">Task</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,58 @@
+<div class="content-wrapper">
+    <div class="container">
+        <div class="row pad-botm">
+            <div class="col-md-12">
+                <h4 class="header-line">Trang chủ/ sửa thông tin</h4>
+            </div>
+        </div>
+        <div class="row ">
+            <div class="col-md-8 col-sm-8 col-xs-12" style="margin-left: 190px;">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        Sửa thông tin User
+                    </div>
+                    <div class="panel-body">
+                        <form role="form" [formGroup]="userForm" (ngSubmit)="onSubmit()">
+                            <div class="form-group">
+                                <label>Fullname:</label>
+                                <input class="form-control" type="text" name="Fullname" formControlName="Fullname" placeholder="Vui lòng nhập username..."/>
+                                <span *ngIf="!userForm.get('Fullname')?.valid && (userForm.get('Fullname')?.dirty||userForm.get('Fullname')?.touched)" class="help-block">Bạn chưa nhập Name</span>
+                            </div>
+                            <div class="form-group">
+                                <label>Username:</label>
+                                <input class="form-control" type="text" name="Username" formControlName="Username" placeholder="Vui lòng nhập username..."/>
+                                <span *ngIf="!userForm.get('Username')?.valid && (userForm.get('Username')?.dirty||userForm.get('Username')?.touched)" class="help-block">Bạn chưa nhập User Name</span>
+                            </div>
+                            <input class="form-control" type="hidden" name="Password" formControlName="Password"/>
+                            <div class="form-group">
+                                <label>Email:</label>
+                                <input class="form-control" type="email" name="Email" formControlName="Email" pattern="[^@\s]+@[^@\s]+" placeholder="Vui lòng nhập email..."/>
+                                <span *ngIf="!userForm.get('Email')?.valid && (userForm.get('Email')?.dirty||userForm.get('Email')?.touched)" class="help-block">Bạn chưa nhập Email</span>
+                            </div>
+                            <div class="form-group">
+                                <label>Avatar:</label>
+                                <input class="form-control" type="file" name="Images" formControlName="Images" accept="image/x-png,image/gif,image/jpeg"/>
+                                <span *ngIf="!userForm.get('Images')?.valid && (userForm.get('Images')?.dirty||userForm.get('Images')?.touched)" class="help-block">Bạn chưa nhập ảnh</span>
+                            </div>
+                            <input class="form-control" type="hidden" name="Roles" formControlName="Roles"/>
+                            <div class="form-group">
+                                <label>Group:</label>
+                                <select class="form-select" aria-label="Default select example" style="width: 189px;" name="TeamName" formControlName="TeamName">
+                                    <option value="East">East</option>
+                                    <option value="West">West</option>
+                                    <option value="South">South</option>
+                                    <option value="North">North</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="hidden" name="TrangThai" formControlName="TrangThai" />
+                            </div>
+                            <a class="btn btn-danger" (click)='onback()' style='width:70px'> Cancel </a> &nbsp;&nbsp;&nbsp;
+                            <button type="submit" class="btn btn-info" [disabled]="userForm.invalid">Edit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,124 @@
+import { Location } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { UsersService } from 'src/app/services/user/users.service';
+import { Userz } from '../../interface/users';
+
+@Component({
+    selector: 'app-register',
+    templateUrl: './register.component.html',
+    styleUrls: ['./register.component.css'],
+    providers:[UsersService]
+})
+export class RegisterComponent implements OnInit {
+    userForm!: FormGroup;
+    public usersss:Userz[]=[];
+    constructor(
+        private location: Location,
+        private users: UsersService,
+        private formBuilder: FormBuilder,
+        private router: Router
+    ) { }
+
+    ngOnInit(): void {
+        this.userForm=new FormGroup({
+            'Fullname': new FormControl('',Validators.required),
+            'Username': new FormControl('',Validators.required),
+            'Password': new FormControl('',Validators.required),
+            'Roles': new FormControl('',Validators.required),
+            'Email': new FormControl('',Validators.required),
+            'TeamName': new FormControl('',Validators.required),
+            'TrangThai': new FormControl('Active',Validators.required)
+        })  
+    }
+    user:any={};
+    public onSubmit(){
+        const newUser:any = {};
+        
+        for(const controlfile in this.userForm.controls){
+            if(controlfile){
+                newUser[controlfile] = this.userForm.controls[controlfile].value;
+                /* this.user = Object.assign(this.user,this.userForm.value);
+                localStorage.setItem('Users',JSON.stringify(this.user)); */          
+            }
+        }
+        this.users.addUser(newUser)
+            .subscribe(
+                res=>{console.log(res);window.location.reload();alert('Đăng ký thành công!')},
+                error => {console.error('Error!',error); alert('Lỗi dữ liệu! Vui lòng nhập lại');window.location.reload()})
+    } 
+
+}
+
+
+
+
+
+
+
+html:
+
+
+<div class="content-wrapper ">
+    <div class="container">
+        <div class="row pad-botm">
+            <div class="col-md-12">
+                <h4 class="header-line">Trang chủ/ đăng ký</h4>
+            </div>
+        </div>
+        <div class="row ">
+            <div class="col-md-8 col-sm-8 col-xs-12" style="margin-left: 190px;">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        Đăng ký
+                    </div>
+                    <div class="panel-body">
+                        <form role="form" [formGroup]="userForm" (ngSubmit)="onSubmit()">
+                            <div class="form-group">
+                                <label>Fullname:</label>
+                                <input class="form-control" type="text" name="Fullname" formControlName="Fullname" placeholder="Vui lòng nhập username..."/>
+                                <span *ngIf="!userForm.get('Fullname')?.valid && (userForm.get('Fullname')?.dirty||userForm.get('Fullname')?.touched)" class="help-block">Bạn chưa nhập Name</span>
+                            </div>
+                            <div class="form-group">
+                                <label>Username:</label>
+                                <input class="form-control" type="text" name="Username" formControlName="Username" placeholder="Vui lòng nhập username..."/>
+                                <span *ngIf="!userForm.get('Username')?.valid && (userForm.get('Username')?.dirty||userForm.get('Username')?.touched)" class="help-block">Bạn chưa nhập User Name</span>
+                            </div>
+                            <div class="form-group">
+                                <label>Password:</label>
+                                <input class="form-control" type="password" name="Password" formControlName="Password" placeholder="Vui lòng nhập pass..."/>
+                                <span *ngIf="!userForm.get('Password')?.valid && (userForm.get('Password')?.dirty||userForm.get('Password')?.touched)" class="help-block">Bạn chưa nhập Pass</span>
+                            </div>
+                            <div class="form-group">
+                                <label>Email:</label>
+                                <input class="form-control" type="email" name="Email" formControlName="Email" pattern="[^@\s]+@[^@\s]+" placeholder="Vui lòng nhập email..."/>
+                                <span *ngIf="!userForm.get('Email')?.valid && (userForm.get('Email')?.dirty||userForm.get('Email')?.touched)" class="help-block">Bạn chưa nhập Email</span>
+                            </div>
+                            <div class="form-group" >
+                                <label>Role:</label>
+                                <select class="form-select" aria-label="Default select example" style="width: 200px;" name="Roles" formControlName="Roles">
+                                    <option value="Leader">Leader</option>
+                                    <option value="Employee">Employee</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Group:</label>
+                                <select class="form-select" aria-label="Default select example" style="width: 189px;" name="TeamName" formControlName="TeamName">
+                                    <option value="East">East</option>
+                                    <option value="West">West</option>
+                                    <option value="South">South</option>
+                                    <option value="North">North</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="hidden" name="TrangThai" formControlName="TrangThai" />
+                            </div>
+                            <button type="submit" class="btn btn-info" [disabled]="userForm.invalid">Đăng ký </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

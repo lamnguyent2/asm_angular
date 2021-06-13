@@ -1,0 +1,75 @@
+TS:
+import { Location } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+
+@Component({
+    selector: 'app-login',
+    templateUrl: './login.component.html',
+    styleUrls: ['./login.component.css']
+})
+export class LoginComponent implements OnInit {
+    userForm!: FormGroup;
+    constructor(private location: Location) { }
+
+    ngOnInit(): void {
+        this.userForm=new FormGroup({
+            'Username': new FormControl('',Validators.required),
+            'Password': new FormControl('',Validators.required)
+        })  
+    }
+
+    onback(){
+        this.location.back();
+    }
+    onreset(){
+        window.location.href="reset-password"
+    }
+    onforgot(){
+        window.location.href="forgot-password"
+    }
+    public onSubmit(){
+        console.log(this.userForm);
+        
+    } 
+}
+
+
+
+
+HTML:
+<div class="content-wrapper ">
+    <div class="container">
+        <div class="row pad-botm">
+            <div class="col-md-12">
+                <h4 class="header-line">Trang chủ/ đăng nhập</h4> 
+            </div>
+        </div>
+        <div class="row ">
+            <div class="col-md-8 col-sm-8 col-xs-12" style="margin-left: 190px;">
+                <div class="panel panel-info" >
+                    <div class="panel-heading">
+                        Đăng nhập
+                    </div>
+                    <div class="panel-body">
+                        <form role="form" [formGroup]="userForm" (ngSubmit)="onSubmit()">
+                            <div class="form-group">
+                                <label>Username</label>
+                                <input class="form-control" type="text" name="Username" formControlName="Username" placeholder="Vui lòng nhập username..."/>
+                                <span *ngIf="!userForm.get('Username')?.valid && (userForm.get('Username')?.dirty||userForm.get('Username')?.touched)" class="help-block">Bạn chưa nhập User Name</span>
+                            </div>
+                            <div class="form-group">
+                                <label>Password</label>
+                                <input class="form-control" type="password" name="Password" formControlName="Password" placeholder="Vui lòng nhập pass..."/>
+                                <span *ngIf="!userForm.get('Password')?.valid && (userForm.get('Password')?.dirty||userForm.get('Password')?.touched)" class="help-block">Bạn chưa nhập Pass</span>
+                            </div>
+                            <button type="submit" class="btn btn-info" [disabled]="userForm.invalid">Đăng nhập </button> &nbsp;
+                            <button type="submit" class="btn btn-info" (click)= "onreset()">Đổi mật khẩu </button> &nbsp;
+                            <button type="submit" class="btn btn-info" (click)= "onforgot()">Quên mật khẩu </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,87 @@
+<div class="content-wrapper">
+    <div class="container">
+        <div class="row pad-botm">
+            <div class="col-md-12">
+                <h4 class="header-line">Trang chủ/ task</h4>                        
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Tasks
+                    </div>
+                    <div class="panel-body" *ngFor="let userzzzz of userzzzzz">
+                        <button class="btn btn-info" style="position: absolute;" *ngIf="userzzzz.Roles=='Employee'"><a href="products-task/createtask">Create Task</a></button>
+                        <div class="md-form mt-0">
+                            <input class="form-control mr-sm-2" type="text" placeholder="Search" style=" width: 200px;float: right;" [(ngModel)]='timkiemValue' (input)='filterActs()'>
+                        </div><br><br>
+                        <!-- Employee -->
+                        <div class="table-responsive" *ngIf="userzzzz.Roles=='Employee'">
+                            <table class="table table-striped table-bordered table-hover" id="dataTables-example" >
+                                <thead >
+                                    <tr>
+                                        <th>TaskID</th>
+                                        <th>Task Name</th>
+                                        <th>Desscription</th>
+                                        <th>Project</th>
+                                        <th>Assigned To</th>
+                                        <th>Priority</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="odd gradeX" *ngFor="let task of taskss | paginate:{id:'listing_pagination',itemsPerPage: 5,currentPage: page, totalItems: totalRecords }">
+                                        <td>{{task.id}}</td>
+                                        <td>{{task.TaskName}}</td>
+                                        <td>{{task.Desscription}}</td>
+                                        <td>{{task.Project}}</td>
+                                        <td>{{task.Assigned_To}}</td>
+                                        <td>{{task.Priority}}</td>
+                                        <td class="center">{{task.Status}}</td>
+                                        <td class="center" style="width: 134px;">
+                                            <button class="btn btn-info" (click)="editTask(task.id)">Edit</button>
+                                            <button class="btn btn-info" (click)="xoaTask(task.id)">Delete</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <pagination-controls id="listing_pagination" (pageChange)="page=$event"></pagination-controls>
+                        </div>    
+                        <!-- Leader -->
+                        <div class="table-responsive" *ngIf="userzzzz.Roles=='Leader'">
+                            <table class="table table-striped table-bordered table-hover" id="dataTables-example" >
+                                <thead >
+                                    <tr>
+                                        <th>TaskID</th>
+                                        <th>Task Name</th>
+                                        <th>Desscription</th>
+                                        <th>Project</th>
+                                        <th>Assigned To</th>
+                                        <th>Priority</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="odd gradeX" *ngFor="let task of taskss | paginate:{id:'listing_pagination',itemsPerPage: 5,currentPage: page, totalItems: totalRecords }">
+                                        <td>{{task.id}}</td>
+                                        <td>{{task.TaskName}}</td>
+                                        <td>{{task.Desscription}}</td>
+                                        <td>{{task.Project}}</td>
+                                        <td>{{task.Assigned_To}}</td>
+                                        <td>{{task.Priority}}</td>
+                                        <td class="center">{{task.Status}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <pagination-controls id="listing_pagination" (pageChange)="page=$event"></pagination-controls>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
